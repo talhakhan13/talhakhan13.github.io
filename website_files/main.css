@@ -85,7 +85,7 @@ a { color: #000000; text-decoration: none; }
 
 a:visited { /*    color: darken($brand-color, 15%); */ }
 
-a:hover { color: #FFB81C; text-decoration: underline; }
+a:hover { color: #E3A72F; text-decoration: underline; }
 
 /* .post-content a, .home a { font-weight: 500; } */
 /** Blockquotes */

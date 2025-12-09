@@ -143,7 +143,11 @@ strong, b {
     color: #FFB81C;
 }
 
-
+/* Style for current active page link */
+.site-nav ul li.current a {
+    color: #FFB81C; /* Highlight active page */
+    text-decoration: underline;
+}
 
 /* Hide menu icon on desktop */
 .site-nav .menu-icon {
@@ -157,53 +161,7 @@ strong, b {
 }
 
 /* ============================================
-   MOBILE NAVIGATION
-============================================ */
-@media screen and (max-width: 600px) {
-    .site-nav {
-        position: absolute;
-        top: 9px;
-        right: 30px;
-        background-color: #fdfdfd;
-        border: 1px solid #e8e8e8;
-        border-radius: 5px;
-        text-align: right;
-    }
-
-    .site-nav .menu-icon {
-        display: block;
-        float: right;
-        width: 36px;
-        height: 26px;
-        line-height: 0;
-        padding-top: 10px;
-        text-align: center;
-    }
-    .site-nav .menu-icon > svg {
-        width: 18px;
-        height: 15px;
-    }
-    .site-nav .menu-icon > svg path {
-        fill: #424242;
-    }
-
-    .site-nav .trigger {
-        clear: both;
-        display: none;
-    }
-    .site-nav:hover .trigger {
-        display: block;
-        padding-bottom: 5px;
-    }
-
-    .site-nav .page-link {
-        display: block;
-        padding: 5px 10px;
-    }
-}
-
-/* ============================================
-   PAGE CONTENT
+   PAGE CONTENT: General Styles
 ============================================ */
 .page-content {
     padding: 10px 0;
@@ -225,34 +183,118 @@ h1 {
     margin-bottom: -10px;
 }
 
+/* Rounded profile picture (used on index and research pages) */
+.rounded-image {
+    border-radius: 5px;
+}
 
+/* ============================================
+   PAGE CONTENT: INDEX.HTML
+============================================ */
+.about-me-container {
+    background-color: rgba(240, 240, 240, 0.3);
+    padding: 30px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+/* Index.html News Container */
+.news-container {
+    background-color: rgba(240, 240, 240, 0.3);
+    padding: 30px 30px 15px 30px;
+    border-radius: 10px;
+}
+
+
+/* ============================================
+   PAGE CONTENT: RESEARCH.HTML
+============================================ */
+/* Main Publications Container */
+.pubs-container {
+    background-color: rgba(240, 240, 240, 0.3);
+    padding: 15px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/* Individual Paper Container (Desktop View) */
+.paper-container {
+    background-color: rgba(240, 240, 240, 0.8);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    /* Desktop layout: Image and text side-by-side */
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Image Container (Desktop View) */
+.paper-container > div:first-child {
+    flex: 0 0 auto;
+    padding-right: 30px;
+}
+
+/* Image Styling (Desktop View) */
+.paper-container img.rounded-image {
+    border-radius: 5px;
+    height: 150px;
+    width: 220px;
+}
+
+
+/* ============================================
+   PAGE CONTENT: TEACHING.HTML
+============================================ */
+.course-container {
+    background-color: rgba(240, 240, 240, 0.3);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.uni-container {
+    background-color: rgba(240, 240, 240, 0.8);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/* List/Course Styling (No Arrows) */
 .uni-container ul {
     margin-left: 0;
     padding-left: 0;
-    list-style: none;
+    list-style: none; /* Use default list disk */
+
+
 }
 
 .uni-container ul li {
     margin-bottom: 8px;
-    position: relative;
-    padding-left: 20px; /* space after arrow */
-}
-
-.uni-container ul li::before {
-    content: "➤";
-    position: absolute;
-    left: 0;
-    top: 50%;                 /* anchor to middle of line */
-    transform: translateY(-50%); /* pull arrow up by half height */
+    /* Removed: position: relative; */
+    padding-left: 0; /* Removed padding for custom arrow */
     color: #000000;
-    font-size: 0.7em;         /* small arrow */
-    line-height: 1;           /* prevents weird shifting */
+    font-weight: normal;
+    font-size: 18px;
+    margin-left: 0px; /* Use margin to indent list items */
 }
 
+/* Removed: .uni-container ul li::before { ... } - The custom arrow is removed */
+/* Removed: Mobile override for ::before position */
+
+/* Styling for university heading (was inline in HTML) */
+.uni-container h3 div {
+    color: #000000;
+    font-size: 1.1em;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
 
 
 /* ============================================
-   IMAGE ALIGNMENT UTILITIES
+   IMAGE ALIGNMENT UTILITIES (For index.html)
 ============================================ */
 .alignright {
     float: right;
@@ -262,13 +304,9 @@ h1 {
     margin-top: 10px;
 }
 
-/* Rounded profile picture */
-.rounded-image {
-    border-radius: 5px;
-}
 
 /* ============================================
-   FOOTER
+   FOOTER (Desktop Styles)
 ============================================ */
 .site-footer {
     border-top: 1px solid #e8e8e8;
@@ -286,6 +324,18 @@ h1 {
     margin-bottom: 15px;
     padding-left: 15px;
 }
+
+/* Explicit margins for desktop footer layout (since removed from HTML) */
+.footer-col-1 .contact-list {
+    margin-left: 10px;
+}
+.footer-col-2 .social-media-list {
+    margin-left: 50px;
+}
+.footer-col-3 p.text {
+    margin-left: 175px;
+}
+
 
 .footer-col-1 {
     width: calc(35% - 15px);
@@ -306,12 +356,6 @@ h1 {
     }
 }
 
-@media screen and (max-width: 600px) {
-    .footer-col {
-        float: none;
-        width: calc(100% - 15px);
-    }
-}
 
 /* Footer icons */
 .icon > svg {
@@ -335,3 +379,135 @@ h1 {
     list-style: none;
 }
 
+
+/* ============================================
+   MOBILE OVERRIDES (max-width: 600px)
+============================================ */
+@media screen and (max-width: 600px) {
+    /* --- MOBILE NAVIGATION --- */
+    .site-nav {
+        position: absolute;
+        top: 9px;
+        right: 30px;
+        background-color: #fdfdfd;
+        border: 1px solid #e8e8e8;
+        border-radius: 5px;
+        text-align: right;
+        z-index: 10;
+    }
+
+    .site-nav .menu-icon {
+        display: block;
+        float: right;
+        width: 36px;
+        height: 26px;
+        line-height: 0;
+        padding-top: 10px;
+        text-align: center;
+    }
+    .site-nav .menu-icon > svg {
+        width: 18px;
+        height: 15px;
+    }
+    .site-nav .menu-icon > svg path {
+        fill: #424242;
+    }
+
+    .site-nav .trigger {
+        clear: both;
+        display: none;
+    }
+
+    .site-nav.active .trigger {
+        display: block;
+        padding-bottom: 5px;
+    }
+
+    /* Make list items stack vertically on mobile */
+    .site-nav ul li {
+        display: block;
+        margin-left: 0;
+    }
+
+    .site-nav .page-link {
+        display: block;
+        padding: 5px 10px;
+        color: #000000;
+        background: none;
+        text-align: left;
+    }
+
+    /* --- INDEX.HTML LAYOUT FIXES (Image) --- */
+    .alignright {
+        float: none;
+        margin: 0 auto 20px auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    .alignright img {
+        max-width: 80%;
+        height: auto;
+        margin-top: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .about-me-container {
+        padding: 20px;
+    }
+
+    /* --- RESEARCH.HTML LAYOUT FIXES (Publications) --- */
+    .paper-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .paper-container > div:first-child {
+        padding-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .paper-container img.rounded-image {
+        height: auto !important;
+        width: auto !important;
+        max-width: 80%;
+    }
+
+    /* Ensure publication text content is left-aligned on mobile */
+    .paper-container > div:last-child {
+        text-align: left;
+    }
+
+
+    /* --- TEACHING.HTML LAYOUT FIXES (No Arrows) --- */
+    .uni-container h3 div {
+        text-align: left; /* Align university heading left */
+    }
+    .uni-container ul li {
+        text-align: left; /* Ensure list items are left aligned */
+    }
+
+    /* --- FOOTER FIXES (User Request: Center Align & Order) --- */
+    .footer-col {
+        float: none;
+        width: calc(100% - 15px);
+        text-align: center; /* Center the column block itself */
+        padding-left: 0;
+    }
+
+    /* Remove desktop margins and center content */
+    .footer-col-1 .contact-list,
+    .footer-col-2 .social-media-list,
+    .footer-col-3 p.text {
+        margin: 0 auto !important; /* Remove specific desktop margins */
+        padding-left: 0;
+        text-align: center; /* Explicitly center the text/lists */
+    }
+
+    /* Ensure social media list items stack */
+    .footer-col-2 .social-media-list li {
+        display: block;
+    }
+
+}

@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Prevent Caching -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -14,10 +13,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="description" content="">
 
-    <!-- Versioning CSS file to avoid cache -->
-    <link rel="stylesheet" href="./website_files/main.css?v=1.0">
-    <!-- Remember to update the version number (?v=1.0) each time you make changes to the CSS -->
-
+    <link rel="stylesheet" href="./website_files/main.css?v=1.2">
     <link rel="canonical" href="https://talhakhan13.github.io/">
 </head>
 
@@ -28,7 +24,7 @@
             <a class="site-title" href="https://talhakhan13.github.io/">Talha Khan</a>
 
             <nav class="site-nav">
-                <a href="https://talhakhan13.github.io/#" class="menu-icon menu.open">
+                <a href="javascript:void(0)" class="menu-icon menu.open">
                     <svg viewBox="0 0 18 15">
                         <path fill="#424242"
                               d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0
@@ -98,12 +94,12 @@
                         }
                     </style>
 
-                    <div class="alignright" style="margin-right: 0em;">
+                    <div class="alignright">
                         <a href="https://talhakhan13.github.io/">
                             <img class="rounded-image"
                                  src="./website_files/talha.png"
                                  alt=""
-                                 style="margin-top: 0.3em; max-height: 15em;">
+                                 style="margin-top: 0.0em; max-height: 15em;">
                         </a>
                     </div>
 
@@ -219,6 +215,7 @@
 
                     <script>
                         document.addEventListener('DOMContentLoaded', (event) => {
+                            // Logic for the 'Show More' button
                             function showMoreItems() {
                                 var hiddenBoxes = document.querySelectorAll('.news-container .styled-box:nth-of-type(1n+5):not(.show)');
                                 for (var i = 0; i < 4 && i < hiddenBoxes.length; i++) {
@@ -231,6 +228,16 @@
                             }
 
                             document.getElementById('show-more-btn').addEventListener('click', showMoreItems);
+
+                            // FIX: Mobile Menu Toggle Logic
+                            const menuIcon = document.querySelector('.site-nav .menu-icon');
+                            const siteNav = document.querySelector('.site-nav');
+
+                            // Toggle the 'active' class on the whole <nav> element when the icon is clicked
+                            menuIcon.addEventListener('click', function(e) {
+                                e.preventDefault(); // Prevent the link from jumping/reloading
+                                siteNav.classList.toggle('active');
+                            });
                         });
                     </script>
 

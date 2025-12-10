@@ -387,7 +387,7 @@ h1 {
     /* --- MOBILE NAVIGATION --- */
     .site-nav {
         position: absolute;
-        top: 9px;
+        top: 27px;
         right: 30px;
         background-color: #fdfdfd;
         border: 1px solid #e8e8e8;
@@ -421,6 +421,7 @@ h1 {
     .site-nav.active .trigger {
         display: block;
         padding-bottom: 5px;
+        padding-right: 20px;
     }
 
     /* Make list items stack vertically on mobile */

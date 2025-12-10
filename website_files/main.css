@@ -194,10 +194,9 @@ h1 {
 .about-me-container {
     background-color: rgba(240, 240, 240, 0.3);
     padding: 30px;
-/*    padding-right: 30px;*/
     margin-bottom: 10px;
     border-radius: 10px;
-    max-width: 70%;
+    max-width: 68%;
 }
 
 /* Index.html News Container */
@@ -282,8 +281,6 @@ h1 {
     margin-left: 0px; /* Use margin to indent list items */
 }
 
-/* Removed: .uni-container ul li::before { ... } - The custom arrow is removed */
-/* Removed: Mobile override for ::before position */
 
 /* Styling for university heading (was inline in HTML) */
 .uni-container h3 div {
@@ -299,7 +296,7 @@ h1 {
 ============================================ */
 .alignright {
     float: right;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 

@@ -311,7 +311,6 @@ h1 {
 .footer-col-wrapper {
     font-size: 15px;
     color: #828282;
-    margin-left: -15px;
 }
 
 .footer-col {
@@ -488,7 +487,7 @@ h1 {
     /* --- FOOTER FIXES (User Request: Center Align & Order) --- */
     .footer-col {
         float: none;
-        width: calc(100% - 15px);
+        width: 100%;
         text-align: center; /* Center the column block itself */
         padding-left: 0;
     }

@@ -38,7 +38,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: #E3A72F; /* Better yellow hover */
+    color: #FFB81C; /* Better yellow hover */
     text-decoration: underline;
 }
 
@@ -227,8 +227,13 @@ h1 {
     border-radius: 10px;
     /* Desktop layout: Image and text side-by-side */
     display: flex;
-    align-items: center;
+    align-items: flex-start !important;
     position: relative;
+}
+
+/* Fix: Remove top margin from the first H4 in the text container to align text with image top */
+.paper-container > div:last-child > h4:first-child {
+    margin-top: 0;
 }
 
 /* Image Container (Desktop View) */
@@ -242,6 +247,47 @@ h1 {
     border-radius: 5px;
     height: 150px;
     width: 220px;
+}
+
+/* ============================================
+   PAGE CONTENT: RESEARCH.HTML - LINK BUTTONS
+============================================ */
+.pub-link-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 5px;
+    margin-top: 5px;
+    margin-right: 6px; /* Space between buttons */
+    margin-bottom: 5px; /* Ensure space for wrapping */
+    border: 1px solid #000000; /* Black border */
+    border-radius: 5px; /* Less round corners */
+    color: #000000; /* Black text color */
+    background-color: rgba(240, 240, 240, 0.8); /* White background */
+    text-decoration: none !important; /* Remove underline on the button */
+    font-size: 0.9em;
+    font-weight: 400; /* Changed to regular weight */
+/*    transition: background-color 0.2s, color 0.2s, border-color 0.2s;*/
+}
+
+.pub-link-button:hover {
+    background-color: #FFB81C;
+    color: #000000;
+    text-decoration: none !important;
+    border-color: #555555; /* Slightly darker border on hover */
+}
+
+.pub-link-button svg {
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+/* Set icon colors to black (ensured by setting fill to currentColor/black) */
+.pub-link-button.pdf-link svg,
+.pub-link-button.video-link svg,
+.pub-link-button.presentation-link svg {
+    fill: #000000;
 }
 
 
@@ -475,6 +521,14 @@ h1 {
         text-align: left;
     }
 
+    /* Stack buttons on mobile if needed */
+    .pub-link-button {
+        display: flex;
+        justify-content: center;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
 
     /* --- TEACHING.HTML LAYOUT FIXES (No Arrows) --- */
     .uni-container h3 div {
@@ -484,7 +538,7 @@ h1 {
         text-align: left; /* Ensure list items are left aligned */
     }
 
-    /* --- FOOTER FIXES (User Request: Center Align & Order) --- */
+    /* --- FOOTER FIXES (User Request: Center Align & Order) */
     .footer-col {
         float: none;
         width: 100%;

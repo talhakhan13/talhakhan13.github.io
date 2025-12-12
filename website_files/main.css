@@ -521,12 +521,17 @@ h1 {
         text-align: left;
     }
 
-    /* Stack buttons on mobile if needed */
     .pub-link-button {
-        display: flex;
-        justify-content: center;
-        margin-right: 0;
-        margin-bottom: 8px;
+            display: inline-flex; /* Change from 'flex' to 'inline-flex' */
+            justify-content: flex-start; /* Change from 'center' to 'flex-start' or remove */
+            margin-right: 6px; /* Re-add the space between buttons from the desktop rule */
+            margin-bottom: 5px; /* Re-add original margin */
+        }
+
+    /* Override the generic mobile text-align: left for the buttons' parent div
+       to allow the buttons to start from the left */
+    .paper-container > div:last-child {
+        text-align: left;
     }
 
 

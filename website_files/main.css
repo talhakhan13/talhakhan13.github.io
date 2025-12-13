@@ -283,12 +283,6 @@ h1 {
     vertical-align: middle;
 }
 
-/* Set icon colors to black (ensured by setting fill to currentColor/black) */
-.pub-link-button.pdf-link svg,
-.pub-link-button.video-link svg,
-.pub-link-button.presentation-link svg {
-    fill: #000000;
-}
 
 
 /* ============================================

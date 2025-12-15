@@ -228,7 +228,7 @@ h1 {
     border-radius: 10px;
     /* Desktop layout: Image and text side-by-side */
     display: flex;
-    align-items: flex-start !important;
+/*    align-items: flex-start !important;*/
     position: relative;
 }
 
@@ -503,12 +503,12 @@ h1 {
     .paper-container > div:first-child {
         padding-right: 0;
         margin-bottom: 10px;
+        text-align: center;
     }
 
     .paper-container img.rounded-image {
-        height: auto !important;
-        width: auto !important;
-        max-width: 80%;
+        width: 286px;
+        height: 195px;
     }
 
     /* Ensure publication text content is left-aligned on mobile */

@@ -337,7 +337,7 @@ h1 {
 ============================================ */
 .alignright {
     float: right;
-    margin-top: 15px;
+    margin-top: -3px;
 }
 
 

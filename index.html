@@ -66,18 +66,27 @@
                 <article class="post-content">
 
                     <style>
+                        /* --- FIX FOR MOBILE NEWS WRAPPING ALIGNMENT --- */
                         .styled-box {
-                            margin-bottom: 0px;
+                            display: flex; /* Makes this a flex container */
+                            margin-bottom: 10px;
+                            line-height: 1.3; /* Added for cleaner wrapped text */
+
                         }
 
-                        .styled-text {
-                            display: block;
+                        /* Target the date (b) inside the styled-box */
+                        .styled-box b {
+                            display: block; /* Ensures the fixed width is honored */
+                            width: 120px;   /* Fixed width for the date text */
+                            flex-shrink: 0; /* Prevents the date from shrinking on smaller screens */
+                            margin-right: 5px; /* Spacing between date and news content */
                         }
 
-                        .styled-text b {
-                            display: inline-block;
-                            width: 120px;
+                        /* New class for the text content */
+                        .news-content-text {
+                            flex-grow: 1; /* Allows the news text to take the remaining space and wrap internally */
                         }
+                        /* Removed old .styled-text rule as it's no longer needed/used */
                     </style>
 
                     <div class="alignright">
@@ -133,67 +142,83 @@
                         <h1 style="margin-bottom: 15px">Latest News</h1>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Aug 2025</b>&emsp;👨‍🏫 Started as Assistant Professor @ Grand Valley State University (GVSU)</span>
+                            <b>Aug 2025</b>
+                            <span class="news-content-text">👨‍🏫 Started as Assistant Professor @ Grand Valley State University (GVSU)</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Mar 2025</b>&emsp;🎓 Successfully defended my PhD thesis</span>
+                            <b>Mar 2025</b>
+                            <span class="news-content-text">🎓 Successfully defended my PhD thesis</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Oct 2024</b>&emsp;🎤 Paper presentation @ ACM ISS</span>
+                            <b>Oct 2024</b>
+                            <span class="news-content-text">🎤 Paper presentation @ ACM ISS</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>May 2024</b>&emsp;👨‍🔬 Research Intern @ Toyota Research Institute (TRI), Human-Centered AI, Los Altos, USA</span>
+                            <b>May 2024</b>
+                            <span class="news-content-text">👨‍🔬 Research Intern @ Toyota Research Institute (TRI), Human-Centered AI, Los Altos, USA</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Apr 2024</b>&emsp;🏆 Won CS 50 Fellowship Award</span>
+                            <b>Apr 2024</b>
+                            <span class="news-content-text">🏆 Won CS 50 Fellowship Award</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Mar 2024</b>&emsp;🎤 Poster Presentation @ IEEE VR</span>
+                            <b>Mar 2024</b>
+                            <span class="news-content-text">🎤 Poster Presentation @ IEEE VR</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Mar 2024</b>&emsp;🎤 Workshop Paper Presentation @ IEEE VR</span>
+                            <b>Mar 2024</b>
+                            <span class="news-content-text">🎤 Workshop Paper Presentation @ IEEE VR</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Mar 2024</b>&emsp;✈️ IEEE VR, Orlando, USA</span>
+                            <b>Mar 2024</b>
+                            <span class="news-content-text">✈️ IEEE VR, Orlando, USA</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Nov 2023</b>&emsp;🤗 ACM ISS Student Volunteer, Pittsburgh, USA</span>
+                            <b>Nov 2023</b>
+                            <span class="news-content-text">🤗 ACM ISS Student Volunteer, Pittsburgh, USA</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Oct 2023</b>&emsp;🏆 Won Best Journal Paper Award @ ISMAR</span>
+                            <b>Oct 2023</b>
+                            <span class="news-content-text">🏆 Won Best Journal Paper Award @ ISMAR</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Oct 2023</b>&emsp;🎤 Paper presentation @ ISMAR, Sydney, Australia</span>
+                            <b>Oct 2023</b>
+                            <span class="news-content-text">🎤 Paper presentation @ ISMAR, Sydney, Australia</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Jun 2023</b>&emsp;✈️ 7th Summer School on Computational Interaction, Ann Arbor, USA</span>
+                            <b>Jun 2023</b>
+                            <span class="news-content-text">✈️ 7th Summer School on Computational Interaction, Ann Arbor, USA</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>May 2023</b>&emsp;👨‍🔬 Research Intern @ Carnegie Mellon University (CMU), Augmented Perception Lab, Pittsburgh, USA</span>
+                            <b>May 2023</b>
+                            <span class="news-content-text">👨‍🔬 Research Intern @ Carnegie Mellon University (CMU), Augmented Perception Lab, Pittsburgh, USA</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Jun 2022</b>&emsp;🎤 Short Paper Presentation @ ACM IMX</span>
+                            <b>Jun 2022</b>
+                            <span class="news-content-text">🎤 Short Paper Presentation @ ACM IMX</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Apr 2022</b>&emsp;🤗 ACM CHI Student Volunteer</span>
+                            <b>Apr 2022</b>
+                            <span class="news-content-text">🤗 ACM CHI Student Volunteer</span>
                         </div>
 
                         <div class="styled-box">
-                            <span class="styled-text"><b>Apr 2022</b>&emsp;✈️ ACM CHI, New Orleans, USA</span>
+                            <b>Apr 2022</b>
+                            <span class="news-content-text">✈️ ACM CHI, New Orleans, USA</span>
                         </div>
 
                         <button id="show-more-btn" class="show-more-btn">Show More</button>
@@ -205,7 +230,7 @@
                             function showMoreItems() {
                                 var hiddenBoxes = document.querySelectorAll('.news-container .styled-box:nth-of-type(1n+5):not(.show)');
                                 for (var i = 0; i < 4 && i < hiddenBoxes.length; i++) {
-                                    hiddenBoxes[i].style.display = 'block';
+                                    hiddenBoxes[i].style.display = 'flex'; // Changed from 'block' to 'flex' to match new CSS
                                     hiddenBoxes[i].classList.add('show');
                                 }
                                 if (hiddenBoxes.length <= 4) {

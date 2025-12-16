@@ -197,7 +197,15 @@ h1 {
     padding: 30px;
     margin-bottom: 10px;
     border-radius: 10px;
-    max-width: 68%;
+    /* NEW FLEXBOX PROPERTIES FOR SIDE-BY-SIDE LAYOUT */
+    display: flex; /* Enable flex container */
+    gap: 30px; /* Space between text and image */
+    align-items: stretch; /* IMPORTANT: Makes children fill the vertical space */
+}
+
+.about-me-text {
+    flex: 1; /* Allows the text content to take up the majority of the space */
+    max-width: 70%; /* Limit text width to 70% of the container */
 }
 
 /* Index.html News Container */
@@ -228,7 +236,7 @@ h1 {
     border-radius: 10px;
     /* Desktop layout: Image and text side-by-side */
     display: flex;
-/*    align-items: flex-start !important;*/
+/* align-items: flex-start !important;*/
     position: relative;
 }
 
@@ -267,7 +275,7 @@ h1 {
     text-decoration: none !important; /* Remove underline on the button */
     font-size: 0.9em;
     font-weight: 400; /* Changed to regular weight */
-/*    transition: background-color 0.2s, color 0.2s, border-color 0.2s;*/
+/* transition: background-color 0.2s, color 0.2s, border-color 0.2s;*/
 }
 
 .pub-link-button:hover {
@@ -336,8 +344,20 @@ h1 {
    IMAGE ALIGNMENT UTILITIES (For index.html)
 ============================================ */
 .alignright {
-    float: right;
-    margin-top: -3px;
+    /* Updated for Flexbox: */
+    flex: 0 0 300px; /* Fixed width for the image column */
+    max-width: 30%; /* Ensure it doesn't get too large */
+    display: flex; /* Make alignright a flex container */
+    justify-content: center; /* Center the content (image) horizontally */
+    align-items: stretch; /* Stretch content vertically to match container height */
+    overflow: hidden; /* IMPORTANT: Hide parts of image cropped by object-fit */
+}
+
+/* The image itself needs to fill the height of its wrapper */
+.alignright img {
+    height: 100%; 
+    width: 100%; /* Set width to 100% of the wrapper */
+    object-fit: cover; /* FIX: Maintain aspect ratio and cover the container area */
 }
 
 
@@ -474,24 +494,37 @@ h1 {
     }
 
     /* --- INDEX.HTML LAYOUT FIXES (Image) --- */
+    .about-me-container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center-align content horizontally */
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .about-me-text {
+        max-width: 100%; /* Text takes full width */
+        order: 2; /* Put text content below the image */
+        flex: auto;
+    }
+
     .alignright {
-        float: none;
-        margin: 0 auto 20px auto;
-        text-align: center;
+        order: 1; /* Put image content above the text */
+        flex: none;
+        max-width: 100%;
         width: 100%;
+        /* Mobile-specific sizing for the image container */
+        height: auto !important; 
+        text-align: center;
+        justify-content: center;
     }
 
     .alignright img {
         max-width: 80%;
         height: auto;
-        margin-top: 0 !important;
-        margin-right: 0 !important;
+        width: auto; /* Reset width to auto for mobile resizing */
+        object-fit: contain; /* Use contain on mobile to ensure the whole image is visible */
     }
 
-    .about-me-container {
-        padding: 20px;
-        max-width: 100%;
-    }
 
     /* --- RESEARCH.HTML LAYOUT FIXES (Publications) --- */
     .paper-container {

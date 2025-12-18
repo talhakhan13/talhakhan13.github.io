@@ -68,45 +68,45 @@
                     <style>
                         /* --- FIX FOR MOBILE NEWS WRAPPING ALIGNMENT --- */
                         .styled-box {
-                            display: flex; /* Makes this a flex container */
+                            display: flex;
                             margin-bottom: 10px;
-                            line-height: 1.3; /* Added for cleaner wrapped text */
+                            line-height: 1.3;
 
                         }
 
-                        /* Target the date (b) inside the styled-box */
                         .styled-box b {
-                            display: block; /* Ensures the fixed width is honored */
-                            width: 120px;   /* Fixed width for the date text */
-                            flex-shrink: 0; /* Prevents the date from shrinking on smaller screens */
-                            margin-right: 5px; /* Spacing between date and news content */
+                            display: block;
+                            width: 120px;
+                            flex-shrink: 0;
+                            margin-right: 5px;
                         }
 
-                        /* New class for the text content */
                         .news-content-text {
-                            flex-grow: 1; /* Allows the news text to take the remaining space and wrap internally */
+                            flex-grow: 1;
                         }
-                        /* Removed old .styled-text rule as it's no longer needed/used */
                     </style>
 
-                    <div class="about-me-container">
-                        <div class="about-me-text"> <h1 style="margin-bottom: 15px">About Me</h1>
-                            <p style="line-height: 130%; text-align: justify;">
-                                I am an assisstant professor in the Department of Information Sciences and Technology at
-                                <a href="https://www.gvsu.edu/">Grand Valley State University</a>. I completed my PhD in 2025
-                                from the <a href="https://www.pitt.edu/">University of Pittsburgh</a> (Pitt) where I was advised by
-                                <a href="https://jtbiehl.github.io">Jacob Biehl</a>.
-                                <br><br>
-                                My research lies in the general area of <b>human-computer interaction</b> (HCI).
-                                I design <b>mixed reality</b> (MR) technologies that enable novel ways of interacting with information.
-                                Much of my work explores applications of MR in <b>surgical settings</b>. At the same time,
-                                I study the challenges of <b>multi-user MR environments</b> and develop solutions that enhance
-                                both personal and shared experiences in these spaces. I have published my findings in leading
-                                venues such as ACM ISS, ACM SUI, and IEEE ISMAR.
-                            </p>
+                    <div class="home-hero-wrapper">
+                        <div class="about-me-container">
+                            <div class="about-me-text"> 
+                                <h1 style="margin-bottom: 15px">About Me</h1>
+                                <p style="line-height: 130%; text-align: justify;">
+                                    I am an Assistant Professor in the Department of Information Sciences and Technology at
+                                    <a href="https://www.gvsu.edu/">Grand Valley State University</a>. I completed my PhD in 2025 from the
+                                    <a href="https://www.pitt.edu/">University of Pittsburgh</a>, where I was advised by
+                                    <a href="https://jtbiehl.github.io">Jacob Biehl</a>.
+                                    <br><br>
+                                    My research lies in the general area of <b>human-computer interaction</b> (HCI).
+                                    I design <b>mixed reality</b> (MR) technologies that enable novel ways of interacting with information.
+                                    Much of my work explores applications of MR in <b>surgical settings</b>. At the same time,
+                                    I study the challenges of <b>incorporating MR inmulti-user environments</b> and develop solutions that enhance
+                                    both personal and shared experiences in these spaces. I have published my findings in leading
+                                    venues such as ACM ISS, ACM SUI, and IEEE ISMAR.
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="alignright">
+                        <div class="home-profile-photo">
                             <a href="https://talhakhan13.github.io/">
                                 <img class="rounded-image"
                                      src="./website_files/talha.png"
@@ -114,6 +114,7 @@
                             </a>
                         </div>
                     </div>
+
                     <style>
                         .styled-box:nth-of-type(1n+6) {
                             display: none;
@@ -225,11 +226,10 @@
 
                     <script>
                         document.addEventListener('DOMContentLoaded', (event) => {
-                            // Logic for the 'Show More' button
                             function showMoreItems() {
                                 var hiddenBoxes = document.querySelectorAll('.news-container .styled-box:nth-of-type(1n+5):not(.show)');
                                 for (var i = 0; i < 4 && i < hiddenBoxes.length; i++) {
-                                    hiddenBoxes[i].style.display = 'flex'; // Changed from 'block' to 'flex' to match new CSS
+                                    hiddenBoxes[i].style.display = 'flex';
                                     hiddenBoxes[i].classList.add('show');
                                 }
                                 if (hiddenBoxes.length <= 4) {
@@ -239,13 +239,11 @@
 
                             document.getElementById('show-more-btn').addEventListener('click', showMoreItems);
 
-                            // FIX: Mobile Menu Toggle Logic
                             const menuIcon = document.querySelector('.site-nav .menu-icon');
                             const siteNav = document.querySelector('.site-nav');
 
-                            // Toggle the 'active' class on the whole <nav> element when the icon is clicked
                             menuIcon.addEventListener('click', function(e) {
-                                e.preventDefault(); // Prevent the link from jumping/reloading
+                                e.preventDefault();
                                 siteNav.classList.toggle('active');
                             });
                         });

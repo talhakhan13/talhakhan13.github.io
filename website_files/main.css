@@ -191,45 +191,37 @@ h1 {
 
 
 /* ============================================
-   IMAGE ALIGNMENT UTILITIES (For index.html)
-============================================ */
-/* Image gets smaller padding (or none) */
-.alignright {
-    flex: 0 0 300px;
-    max-width: 20%;
-    padding: 5px; /* or 0 */
-    display: flex;
-    overflow: hidden;
-}
-
-
-/* The image itself needs to fill the height of its wrapper */
-.alignright img {
-    height: 100%; 
-    width: 100%; /* Set width to 100% of the wrapper */
-    object-fit: cover; /* FIX: Maintain aspect ratio and cover the container area */
-}
-
-
-/* ============================================
    PAGE CONTENT: INDEX.HTML
 ============================================ */
+.home-hero-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    align-items: stretch;
+}
+
 .about-me-container {
     background-color: rgba(240, 240, 240, 0.3);
-    margin-bottom: 10px;
     border-radius: 10px;
-    display: flex;
-    gap: 10px; /* reduced gap */
-    align-items: stretch;
+    flex: 1;
 }
 
 /* Text gets padding */
 .about-me-text {
-    flex: 1;
-    max-width: 70%;
     padding: 30px;
 }
 
+.home-profile-photo {
+    flex: 0 0 300px;
+    display: flex;
+}
+
+.home-profile-photo img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
 /* Index.html News Container */
@@ -498,35 +490,33 @@ h1 {
     }
 
     /* --- INDEX.HTML LAYOUT FIXES (Image) --- */
-    .about-me-container {
+    .home-hero-wrapper {
         flex-direction: column; /* Stack image and text vertically */
         align-items: center; /* Center-align content horizontally */
         gap: 15px;
-        padding: 20px;
+        padding: 0;
     }
 
-    .about-me-text {
+    .about-me-container {
         max-width: 100%; /* Text takes full width */
         order: 2; /* Put text content below the image */
-        flex: auto;
+        width: 100%;
     }
 
-    .alignright {
+    .home-profile-photo {
         order: 1; /* Put image content above the text */
         flex: none;
-        max-width: 100%;
         width: 100%;
-        /* Mobile-specific sizing for the image container */
         height: auto !important; 
         text-align: center;
         justify-content: center;
     }
 
-    .alignright img {
+    .home-profile-photo img {
         max-width: 80%;
         height: auto;
-        width: auto; /* Reset width to auto for mobile resizing */
-        object-fit: contain; /* Use contain on mobile to ensure the whole image is visible */
+        width: auto; 
+        object-fit: contain; 
     }
 
 

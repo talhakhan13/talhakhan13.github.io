@@ -54,7 +54,7 @@ strong, b {
 
 /* Wrapper (layout container) */
 .wrapper {
-    max-width: 50%;
+    max-width: calc(1250px);
     margin: 0 auto;
     padding: 0 30px;
 }

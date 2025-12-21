@@ -363,6 +363,16 @@ h1 {
 
 
 
+.diamond {
+    font-size: 0.6em;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1.5px; /* Fine-tunes the vertical position */
+    margin-right: 6px;
+}
+
+
 /* ============================================
    BLANK BAR FOOTER
 ============================================ */

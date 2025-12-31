@@ -342,7 +342,7 @@ h1 {
 }
 
 .uni-container ul li {
-    margin-bottom: 8px;
+    margin-bottom: -10px;
     /* Removed: position: relative; */
     padding-left: 0; /* Removed padding for custom arrow */
     color: #000000;
@@ -363,7 +363,7 @@ h1 {
 
 
 .diamond {
-    font-size: 0.6em;
+    font-size: 1.5em;
     display: inline-block;
     vertical-align: middle;
     position: relative;

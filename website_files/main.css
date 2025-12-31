@@ -203,7 +203,7 @@ h1 {
     display: flex;
     gap: 15px;
     margin-bottom: 10px;
-    align-items: center;
+    align-items: stretch;
 }
 
 .about-me-container {

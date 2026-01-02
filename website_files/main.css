@@ -356,7 +356,7 @@ h1 {
 .uni-container h3 div {
     color: #000000;
     font-size: 1.1em;
-    text-decoration: underline;
+    text-decoration: none;
     margin-bottom: 5px;
 }
 
@@ -370,6 +370,23 @@ h1 {
     top: -1.5px; /* Fine-tunes the vertical position */
     margin-right: 6px;
 }
+
+
+
+.uni-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;              /* space between text and logo */
+}
+
+/* Logo scales exactly with text height */
+.uni-logo {
+    height: 2.2em;           /* SAME height as text */
+    width: auto;           /* preserve aspect ratio */
+    vertical-align: middle;
+    opacity: 1;         /* optional: slightly softer look */
+}
+
 
 
 /* ============================================

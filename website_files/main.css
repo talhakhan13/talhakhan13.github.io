@@ -43,6 +43,7 @@ a {
     color: #000000;
     text-decoration: none;
 }
+
 a:hover {
     color: #000000;
     text-decoration: underline;
@@ -421,6 +422,146 @@ body {
 .site-footer .wrapper {
     display: none; 
 }
+
+
+/* ============================================
+   LAB PAGE ADDITIONS (SAFE EXTENSIONS ONLY)
+/*============================================ */
+.lab-logo {
+    flex: 0 0 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lab-logo img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.lab-site-title,
+.lab-site-title:hover {
+    text-decoration: none !important;
+}
+
+
+.lab-site-title:hover .title-text {
+    text-decoration: underline;
+}
+
+.lab-site-title .math {
+    font-family: "Times New Roman", "STIX Two Math", "Cambria Math", serif;
+    font-style: italic;
+    font-size: 1em;
+    letter-spacing: 0.02em;
+    text-decoration: none !important;
+    display: inline-block; /* prevents weird decoration bleed */
+}
+
+
+.lab-site-title .math sup {
+    font-size: 0.65em;
+    vertical-align: super;
+    position: relative;
+    top: -0.2em;
+}
+
+.lab-site-title {
+    font-size: 40px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin: 0;
+}
+
+
+.lab-site-title:hover {
+    color: #059e8f;
+}
+
+
+.lab-section {
+    margin-bottom: 50px;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    justify-content: center;
+    gap: 60px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+
+.member-card {
+    text-align: center;
+}
+
+.member-card img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.member-card h4 {
+    margin-top: 15px;
+}
+
+.member-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+
+
+/* ============================================
+   LAB PAGE: MOBILE OVERRIDES
+   (Safe: only affects .members-grid and .member-card used on lab.html)
+============================================ */
+@media screen and (max-width: 900px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 200px);
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .member-card img {
+        width: 200px;
+        height: 240px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 15px;
+        margin-bottom: 45px;
+    }
+
+    .member-card {
+        text-align: center;
+    }
+
+    .member-card img {
+        width: min(260px, 85vw);
+        height: auto;
+        aspect-ratio: 5 / 6;   /* keeps consistent portrait proportions */
+        object-fit: cover;
+    }
+
+    /* Extra breathing room between sections on small screens */
+    .lab-section {
+        margin-bottom: 35px;
+    }
+}
+
 
 
 

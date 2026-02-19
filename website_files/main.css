@@ -94,7 +94,8 @@ strong, b {
 }
 
 .site-title {
-    font-size: 40px;
+    font-size: clamp(20px, 5vw, 40px);
+    white-space: nowrap;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;
@@ -469,7 +470,8 @@ body {
 }
 
 .lab-site-title {
-    font-size: 40px;
+    font-size: clamp(20px, 5vw, 40px);
+    white-space: nowrap;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     color: #fff;

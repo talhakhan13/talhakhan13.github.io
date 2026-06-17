@@ -248,6 +248,21 @@ h1 {
     padding: 15px;
 }
 
+.about-me-text a {
+    color: #111;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: rgba(17, 17, 17, 0.38);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.about-me-text a:hover {
+    color: #047f74;
+    text-decoration-color: #059e8f;
+}
+
 .home-profile-photo {
     flex: 0 0 350px;
 }

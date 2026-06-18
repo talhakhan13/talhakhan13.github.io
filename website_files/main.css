@@ -528,8 +528,18 @@ h1 {
     grid-template-columns: minmax(78px, max-content) 1fr auto;
     gap: 3px 12px;
     align-items: center;
-    padding: 7px 0;
+    padding: 6px 0;
     border-top: 1px solid #edf1f4;
+}
+
+.course-item .pub-link-button {
+    align-self: center;
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    justify-self: end;
+    margin: 0;
+    min-height: 24px;
+    padding: 4px 8px;
 }
 
 .course-code {
@@ -1014,6 +1024,8 @@ body {
     }
 
     .course-item .pub-link-button {
+        grid-column: auto;
+        grid-row: auto;
         justify-self: start;
     }
 }

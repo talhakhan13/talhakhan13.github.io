@@ -651,50 +651,18 @@ body {
     padding: 12px;
     position: relative;
     overflow: visible;
+    border: 1px solid transparent;
     border-radius: 8px;
     line-height: 0;
+    transition: background-color 0.26s ease, border-color 0.26s ease, box-shadow 0.26s ease;
 }
 
-.lab-logo a::before,
-.lab-logo a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 8px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.22s ease, transform 0.22s ease;
-}
-
-.lab-logo a::before {
-    background:
-        linear-gradient(#059e8f, #059e8f) left top / 26px 2px no-repeat,
-        linear-gradient(#059e8f, #059e8f) left top / 2px 26px no-repeat,
-        linear-gradient(#059e8f, #059e8f) right top / 26px 2px no-repeat,
-        linear-gradient(#059e8f, #059e8f) right top / 2px 26px no-repeat,
-        linear-gradient(#059e8f, #059e8f) left bottom / 26px 2px no-repeat,
-        linear-gradient(#059e8f, #059e8f) left bottom / 2px 26px no-repeat,
-        linear-gradient(#059e8f, #059e8f) right bottom / 26px 2px no-repeat,
-        linear-gradient(#059e8f, #059e8f) right bottom / 2px 26px no-repeat;
-    transform: scale(0.96);
-}
-
-.lab-logo a::after {
-    border: 1px solid rgba(5, 158, 143, 0.18);
-    transform: scale(0.98);
-}
-
-.lab-logo a:hover::before,
-.lab-logo a:focus-visible::before {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.lab-logo a:hover::after,
-.lab-logo a:focus-visible::after {
-    animation: calibration-frame-pulse 1.8s ease-in-out infinite;
-    opacity: 1;
-    transform: scale(1);
+.lab-logo a:hover,
+.lab-logo a:focus-visible {
+    background-color: rgba(5, 158, 143, 0.035);
+    border-color: rgba(5, 158, 143, 0.22);
+    box-shadow: 0 12px 32px rgba(5, 158, 143, 0.16);
+    outline: none;
 }
 
 .lab-logo img {
@@ -703,16 +671,6 @@ body {
     object-fit: contain;
     display: block;
 }
-
-@keyframes calibration-frame-pulse {
-    0%, 100% {
-        opacity: 0.18;
-    }
-    50% {
-        opacity: 0.42;
-    }
-}
-
 
 .lab-site-title,
 .lab-site-title:hover {

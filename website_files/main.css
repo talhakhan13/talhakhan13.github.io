@@ -657,11 +657,15 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 100%;
     padding: 12px;
     position: relative;
     overflow: visible;
-    border: 1px solid transparent;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: 1px solid #edf1f4;
     border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.035);
     line-height: 0;
     transition: background-color 0.26s ease, border-color 0.26s ease, box-shadow 0.26s ease;
 }
@@ -675,8 +679,10 @@ body {
 }
 
 .lab-logo img {
+    width: 100%;
+    height: 100%;
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
     object-fit: contain;
     display: block;
 }
@@ -929,6 +935,23 @@ body {
         height: auto;
         width: auto;
         object-fit: contain; 
+    }
+
+    .lab-logo {
+        order: 1;
+        flex: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .lab-logo a {
+        height: auto;
+    }
+
+    .lab-logo img {
+        width: auto;
+        height: auto;
+        max-width: 80%;
     }
 
 

@@ -236,7 +236,7 @@ h1 {
 }
 
 .about-me-container {
-    background-color: #fffefe;
+    background-color: #ffffff;
     border: 1px solid #edf1f4;
     border-radius: 12px;
     box-shadow: 0 4px 14px rgba(15, 23, 42, 0.035);
@@ -418,6 +418,15 @@ h1 {
     color: #ffffff;
     text-decoration: none !important;
     border-color: #059e8f;
+}
+
+.pub-link-button-disabled,
+.pub-link-button-disabled:hover {
+    color: #667085;
+    background-color: #f1f5f9;
+    border-color: #d8dee7;
+    cursor: default;
+    text-decoration: none !important;
 }
 
 .pub-link-button svg {
